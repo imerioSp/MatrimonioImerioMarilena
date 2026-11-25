@@ -240,11 +240,11 @@ a:hover {
 }
 
 .couple-names .amp {
-  display: block;
+  display: inline;
   font-style: italic;
   color: var(--gold);
   font-weight: 400;
-  margin: 0.08em 0;
+  margin: 0 0.15em;
 }
 
 .wax-divider {
@@ -1141,5 +1141,12 @@ input:focus, select:focus, textarea:focus {
 
   .rsvp-card {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .couple-names .amp {
+    display: block;
+    margin: 0.08em 0;
   }
 }
