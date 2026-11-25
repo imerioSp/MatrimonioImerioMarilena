@@ -1150,3 +1150,13 @@ input:focus, select:focus, textarea:focus {
     margin: 0.08em 0;
   }
 }
+
+.hero-story {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.5vw, 1.38rem);
+  line-height: 1.55;
+  color: var(--ink-muted);
+  max-width: 580px;
+  margin: 0 auto 2rem;
+}
