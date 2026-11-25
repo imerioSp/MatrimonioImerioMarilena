@@ -4,8 +4,8 @@
  */
 const CONFIG = {
   weddingDateISO: "2027-10-09T15:00:00+02:00",
-  whatsappNumber: "393498194558",
-  emailAddress: "imerio.spagnuolo@gmail.com",
+  whatsappNumber: "",
+  emailAddress: "",
   // OPZIONALE: inserisci il tuo endpoint gratuito Formspree (es. "https://formspree.io/f/xxxxxxxx")
   // per ricevere automaticamente ogni RSVP via email oltre ai pulsanti WhatsApp/Email.
   formspreeEndpoint: ""
@@ -273,8 +273,8 @@ function initRsvpForm() {
 
     // Aggiorna riepilogo e link di invio diretto
     summaryPreview.textContent = messageText;
-    btnWA.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(messageText)}`;
-    btnEmail.href = `mailto:${CONFIG.emailAddress}?subject=${encodeURIComponent("RSVP Matrimonio - " + guestName)}&body=${encodeURIComponent(messageText)}`;
+    if (btnWA && CONFIG.whatsappNumber) btnWA.href = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(messageText)}`;
+    if (btnEmail && CONFIG.emailAddress) btnEmail.href = `mailto:${CONFIG.emailAddress}?subject=${encodeURIComponent("RSVP Matrimonio - " + guestName)}&body=${encodeURIComponent(messageText)}`;
 
     // Se è stato configurato Formspree, invia automaticamente in background
     if (CONFIG.formspreeEndpoint) {
