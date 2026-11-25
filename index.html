@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imerio &amp; Marilena · 9 Ottobre 2027</title>
+  <meta name="description" content="Con gioia annunciamo il nostro matrimonio. Sabato 9 Ottobre 2027, Napoli (Vomero). Scopri programma, location, ospitalità e conferma la tua presenza." />
+
+  <!-- Open Graph per anteprima elegante su WhatsApp / Social -->
+  <meta property="og:title" content="Imerio &amp; Marilena · 9 Ottobre 2027" />
+  <meta property="og:description" content="Sabato 9 Ottobre 2027 · Chiesa di San Francesco d'Assisi al Vomero &amp; Palazzo Belvedere, Napoli." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/img/logo-im.png" />
+
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- Navigazione fissa -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Torna in alto - Imerio e Marilena">
+        <img src="./assets/img/logo-im.png" alt="Monogramma IM" class="brand-logo" />
+        <span class="brand-text">Imerio &amp; Marilena</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Navigazione principale">
+        <a href="#programma">Programma</a>
+        <a href="#location">Location</a>
+        <a href="#ospitalita">Ospitalità</a>
+        <a href="#come-arrivare">Come Arrivare</a>
+        <a href="#faq">FAQ</a>
+        <a href="#rsvp" class="nav-cta">Conferma RSVP</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero ispirata alla partecipazione in carta cotone -->
+  <main id="top">
+    <section class="hero">
+      <div class="hero-ribbon-top" aria-hidden="true"></div>
+
+      <div class="container hero-card reveal">
+        <!-- Bordo decorativo interno stile carta fatta a mano -->
+        <div class="hero-card-inner">
+          <div class="monogram-wrap">
+            <img src="./assets/img/logo-im.png" alt="Monogramma dorato Imerio e Marilena" class="hero-logo" />
+          </div>
+
+          <p class="eyebrow">Con gioia annunciamo il nostro matrimonio</p>
+
+          <h1 class="couple-names">
+            Imerio <span class="amp">&amp;</span> Marilena
+          </h1>
+
+          <!-- Divisore con nastro pesca cipria e sigillo in ceralacca -->
+          <div class="wax-divider" aria-hidden="true">
+            <span class="ribbon-line"></span>
+            <span class="wax-seal">
+              <svg viewBox="0 0 64 64" width="46" height="46" aria-hidden="true">
+                <defs>
+                  <radialGradient id="sealGrad" cx="35%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#DFA089"/>
+                    <stop offset="55%" stop-color="#C7826B"/>
+                    <stop offset="100%" stop-color="#9F5D48"/>
+                  </radialGradient>
+                </defs>
+                <path d="M32 3 C46 2, 59 12, 60 28 C62 44, 51 60, 33 61 C15 62, 3 50, 4 32 C5 14, 18 4, 32 3 Z" fill="url(#sealGrad)" />
+                <circle cx="32" cy="32" r="23" fill="none" stroke="#F4D7C8" stroke-opacity="0.55" stroke-width="1.3" />
+                <!-- Rametto d'ulivo stilizzato -->
+                <path d="M18 44 C15 35, 17 24, 24 18" fill="none" stroke="#F7E5DA" stroke-width="1.2" stroke-linecap="round"/>
+                <ellipse cx="16" cy="36" rx="3" ry="1.5" transform="rotate(-35 16 36)" fill="#F7E5DA" opacity="0.85"/>
+                <ellipse cx="17" cy="28" rx="3" ry="1.5" transform="rotate(-20 17 28)" fill="#F7E5DA" opacity="0.85"/>
+                <ellipse cx="21" cy="21" rx="2.8" ry="1.4" transform="rotate(10 21 21)" fill="#F7E5DA" opacity="0.85"/>
+                <text x="36" y="38" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="18" fill="#FFF7F2">IM</text>
+              </svg>
+            </span>
+            <span class="ribbon-line"></span>
+          </div>
+
+          <p class="wedding-date">Sabato 9 Ottobre 2027</p>
+          <p class="wedding-place">Napoli · Vomero</p>
+
+          <!-- Countdown live -->
+          <div class="countdown" id="countdown" aria-label="Conto alla rovescia al matrimonio">
+            <div class="count-box">
+              <span class="count-num" id="cdDays">--</span>
+              <span class="count-label">Giorni</span>
+            </div>
+            <div class="count-sep" aria-hidden="true">·</div>
+            <div class="count-box">
+              <span class="count-num" id="cdHours">--</span>
+              <span class="count-label">Ore</span>
+            </div>
+            <div class="count-sep" aria-hidden="true">·</div>
+            <div class="count-box">
+              <span class="count-num" id="cdMinutes">--</span>
+              <span class="count-label">Minuti</span>
+            </div>
+            <div class="count-sep" aria-hidden="true">·</div>
+            <div class="count-box">
+              <span class="count-num" id="cdSeconds">--</span>
+              <span class="count-label">Secondi</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#rsvp" class="btn btn-primary">Conferma la tua presenza</a>
+            <a href="#location" class="btn btn-outline">Scopri le location</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deckle-edge divider -->
+    <div class="deckle-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 36" preserveAspectRatio="none">
+        <path fill="#F3ECE3" d="M0,18 L24,14 L52,20 L84,13 L120,19 L160,12 L198,21 L240,14 L285,18 L330,11 L378,20 L425,14 L472,19 L520,12 L568,21 L615,15 L665,19 L715,11 L768,20 L818,13 L870,18 L920,12 L975,21 L1028,14 L1080,19 L1132,12 L1185,20 L1240,14 L1292,18 L1348,13 L1396,19 L1440,15 L1440,36 L0,36 Z"/>
+      </svg>
+    </div>
+
+    <!-- Programma della Giornata -->
+    <section class="section section-tinted" id="programma">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Il Nostro Giorno</p>
+          <h2 class="section-title">Programma del Weekend</h2>
+          <p class="section-lead">
+            Dall'accoglienza degli ospiti da fuori fino al tramonto sul Golfo di Napoli: ecco i momenti che vivremo insieme.
+          </p>
+        </div>
+
+        <div class="timeline reveal">
+          <article class="timeline-item">
+            <div class="timeline-time">Ven 8 Ott · Pom.</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Arrivo Ospiti da Fuori</h3>
+              <p>Check-in riservato presso il <strong>Chiostro San Francesco</strong> (Via Luca Giordano, 2) per trascorrere insieme il weekend senza fretta.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-time">Sab 9 Ott · 15:00</div>
+            <div class="timeline-dot timeline-dot-gold"></div>
+            <div class="timeline-content">
+              <h3>La Cerimonia</h3>
+              <p>Celebrazione del rito presso la <strong>Chiesa di San Francesco d'Assisi al Vomero</strong>, adiacente al Chiostro. Si consiglia di arrivare entro le 14:40.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-time">Sab 9 Ott · 17:00</div>
+            <div class="timeline-dot timeline-dot-gold"></div>
+            <div class="timeline-content">
+              <h3>Il Ricevimento</h3>
+              <p>Brindisi, cena e festa panoramica a <strong>Palazzo Belvedere</strong> (Via Aniello Falcone, 122), affacciato sul Golfo di Napoli.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-time">Dom 10 Ott · Matt.</div>
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h3>Saluti &amp; Partenze</h3>
+              <p>Colazione rilassata e saluti finali prima del check-out dal Chiostro San Francesco.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location Cerimonia & Ricevimento -->
+    <section class="section" id="location">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">I Luoghi del Cuore</p>
+          <h2 class="section-title">Cerimonia &amp; Ricevimento</h2>
+          <p class="section-lead">
+            Entrambe le location si trovano sulla collina del Vomero, a circa 10 minuti l'una dall'altra.
+          </p>
+        </div>
+
+        <div class="location-grid">
+          <!-- Card Chiesa -->
+          <article class="location-card reveal" data-location="chiesa">
+            <div class="location-media">
+              <div class="media-tabs" role="tablist" aria-label="Visualizzazione Chiesa">
+                <button type="button" class="media-tab active" data-target="map">Mappa Reale</button>
+                <button type="button" class="media-tab" data-target="photo">Foto Location</button>
+              </div>
+
+              <div class="media-panel active" data-panel="map">
+                <iframe
+                  title="Mappa Chiesa di San Francesco d'Assisi al Vomero"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://maps.google.com/maps?q=Chiesa+di+San+Francesco+d'Assisi+al+Vomero,+Via+Luca+Giordano+2,+Napoli&t=&z=16&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+              </div>
+
+              <div class="media-panel" data-panel="photo">
+                <img
+                  src="./assets/img/chiesa.jpg"
+                  alt="Chiesa di San Francesco d'Assisi al Vomero"
+                  class="location-photo"
+                  data-photo-key="chiesa"
+                />
+                <div class="photo-fallback">
+                  <div class="fallback-icon" aria-hidden="true">⛪</div>
+                  <p class="fallback-title">Chiesa di San Francesco d'Assisi al Vomero</p>
+                  <p class="fallback-sub">Apri la galleria fotografica ufficiale su Google Maps oppure carica una foto di anteprima.</p>
+                  <div class="fallback-actions">
+                    <a href="https://maps.app.goo.gl/PwxZp1wAJ4Mf4NFZ8?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Foto su Google Maps</a>
+                    <label class="btn btn-sm btn-outline upload-label">
+                      Carica anteprima
+                      <input type="file" accept="image/*" class="local-photo-input" data-photo-key="chiesa" hidden />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="location-body">
+              <span class="location-badge">Cerimonia · Ore 15:00</span>
+              <h3>Chiesa di San Francesco d'Assisi al Vomero</h3>
+              <p class="location-address">Via Luca Giordano, 2 · 80127 Napoli (NA)</p>
+              <p class="location-desc">
+                Nel cuore del Vomero, a pochi passi dalla fermata Vanvitelli della Linea 1 e direttamente collegata al Chiostro San Francesco.
+              </p>
+              <div class="location-links">
+                <a href="https://maps.app.goo.gl/PwxZp1wAJ4Mf4NFZ8?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  Apri in Google Maps ↗
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card Ricevimento -->
+          <article class="location-card reveal" data-location="palazzo">
+            <div class="location-media">
+              <div class="media-tabs" role="tablist" aria-label="Visualizzazione Palazzo Belvedere">
+                <button type="button" class="media-tab active" data-target="map">Mappa Reale</button>
+                <button type="button" class="media-tab" data-target="photo">Foto Location</button>
+              </div>
+
+              <div class="media-panel active" data-panel="map">
+                <iframe
+                  title="Mappa Palazzo Belvedere Napoli"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  src="https://maps.google.com/maps?q=Palazzo+Belvedere,+Via+Aniello+Falcone+122,+Napoli&t=&z=16&ie=UTF8&iwloc=&output=embed">
+                </iframe>
+              </div>
+
+              <div class="media-panel" data-panel="photo">
+                <img
+                  src="./assets/img/palazzo-belvedere.jpg"
+                  alt="Palazzo Belvedere Napoli"
+                  class="location-photo"
+                  data-photo-key="palazzo"
+                />
+                <div class="photo-fallback">
+                  <div class="fallback-icon" aria-hidden="true">🏛️</div>
+                  <p class="fallback-title">Palazzo Belvedere · Napoli</p>
+                  <p class="fallback-sub">Scopri gli scatti reali della terrazza panoramica su Google Maps oppure carica una foto di anteprima.</p>
+                  <div class="fallback-actions">
+                    <a href="https://maps.app.goo.gl/JiQrz46grgzhtTSs9?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Foto su Google Maps</a>
+                    <label class="btn btn-sm btn-outline upload-label">
+                      Carica anteprima
+                      <input type="file" accept="image/*" class="local-photo-input" data-photo-key="palazzo" hidden />
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="location-body">
+              <span class="location-badge">Ricevimento · Ore 17:00</span>
+              <h3>Palazzo Belvedere</h3>
+              <p class="location-address">Via Aniello Falcone, 122 · 80127 Napoli (NA)</p>
+              <p class="location-desc">
+                Dimora storica con terrazze panoramiche sospese sul Golfo di Napoli, dove brinderemo insieme dal tramonto fino a tarda sera.
+              </p>
+              <div class="location-links">
+                <a href="https://maps.app.goo.gl/JiQrz46grgzhtTSs9?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  Apri in Google Maps ↗
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ospitalità per ospiti da fuori -->
+    <section class="section section-tinted" id="ospitalita">
+      <div class="container">
+        <div class="hospitality-card reveal" data-location="chiostro">
+          <div class="hospitality-info">
+            <p class="section-kicker">Per Chi Viene da Fuori</p>
+            <h2 class="section-title left">Ospitalità al Chiostro San Francesco</h2>
+            <p class="hospitality-dates">Venerdì 8 – Domenica 10 Ottobre 2027</p>
+            <p>
+              Per rendere il vostro soggiorno comodo e rilassante, abbiamo riservato l'ospitalità presso il
+              <strong>Chiostro San Francesco</strong>, uno storico complesso del Vomero dotato di un incantevole giardino interno.
+            </p>
+            <ul class="perk-list">
+              <li><strong>Posizione imbattibile:</strong> si trova allo stesso indirizzo della Chiesa (Via Luca Giordano, 2) — il sabato mattina basterà scendere a piedi.</li>
+              <li><strong>Weekend completo:</strong> soggiorni disponibili dal venerdì alla domenica.</li>
+              <li><strong>Come prenotare:</strong> indica la tua preferenza direttamente nel <a href="#rsvp">modulo RSVP</a> in fondo alla pagina.</li>
+            </ul>
+            <div class="location-links">
+              <a href="https://maps.app.goo.gl/LyCa3Jx6GX5fL3zB6?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                Apri Chiostro su Maps ↗
+              </a>
+              <a href="#rsvp" class="btn btn-outline btn-sm">Richiedi Camera nell'RSVP</a>
+            </div>
+          </div>
+
+          <div class="hospitality-media">
+            <div class="media-tabs" role="tablist" aria-label="Visualizzazione Chiostro San Francesco">
+              <button type="button" class="media-tab active" data-target="map">Mappa Reale</button>
+              <button type="button" class="media-tab" data-target="photo">Foto Struttura</button>
+            </div>
+
+            <div class="media-panel active" data-panel="map">
+              <iframe
+                title="Mappa Chiostro San Francesco Napoli"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Chiostro+San+Francesco,+Via+Luca+Giordano+2,+Napoli&t=&z=16&ie=UTF8&iwloc=&output=embed">
+              </iframe>
+            </div>
+
+            <div class="media-panel" data-panel="photo">
+              <img
+                src="./assets/img/chiostro.jpg"
+                alt="Chiostro San Francesco al Vomero"
+                class="location-photo"
+                data-photo-key="chiostro"
+              />
+              <div class="photo-fallback">
+                <div class="fallback-icon" aria-hidden="true">🌿</div>
+                <p class="fallback-title">Chiostro San Francesco · Vomero</p>
+                <p class="fallback-sub">Visualizza le foto reali del chiostro e delle camere su Google Maps o carica una foto di anteprima.</p>
+                <div class="fallback-actions">
+                  <a href="https://maps.app.goo.gl/LyCa3Jx6GX5fL3zB6?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Foto su Google Maps</a>
+                  <label class="btn btn-sm btn-outline upload-label">
+                    Carica anteprima
+                    <input type="file" accept="image/*" class="local-photo-input" data-photo-key="chiostro" hidden />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Come Arrivare -->
+    <section class="section" id="come-arrivare">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Informazioni Pratiche</p>
+          <h2 class="section-title">Come Arrivare &amp; Spostamenti</h2>
+          <p class="section-lead">
+            Tutte le indicazioni per raggiungere comodamente il Vomero e spostarsi dalla cerimonia al ricevimento.
+          </p>
+        </div>
+
+        <div class="travel-box reveal">
+          <div class="travel-tabs" role="tablist">
+            <button type="button" class="travel-tab active" data-travel="treno">In Treno</button>
+            <button type="button" class="travel-tab" data-travel="aereo">In Aereo</button>
+            <button type="button" class="travel-tab" data-travel="auto">In Auto &amp; Parcheggi</button>
+            <button type="button" class="travel-tab" data-travel="spostamento">Chiesa → Ricevimento</button>
+          </div>
+
+          <div class="travel-panels">
+            <div class="travel-panel active" id="travel-treno">
+              <h3>Da Napoli Centrale / Piazza Garibaldi</h3>
+              <ul>
+                <li><strong>Metropolitana Linea 1:</strong> scendere alla fermata <strong>Vanvitelli</strong> (circa 18 minuti). Dalla stazione si raggiunge Via Luca Giordano 2 con una passeggiata pianeggiante di 6–7 minuti.</li>
+                <li><strong>Taxi:</strong> stazionamento subito fuori dalla stazione centrale (circa 20–25 minuti fino al Vomero, traffico permettendo).</li>
+              </ul>
+            </div>
+
+            <div class="travel-panel" id="travel-aereo">
+              <h3>Dall'Aeroporto di Napoli Capodichino (NAP)</h3>
+              <ul>
+                <li><strong>Taxi diretto:</strong> l'opzione più comoda per il Vomero (circa 20–30 minuti via Tangenziale, uscita Vomero).</li>
+                <li><strong>Alibus + Metro:</strong> navetta Alibus fino a Piazza Garibaldi (20 min) e poi Metro Linea 1 direzione Piscinola fino a fermata <strong>Vanvitelli</strong>.</li>
+              </ul>
+            </div>
+
+            <div class="travel-panel" id="travel-auto">
+              <h3>In Auto &amp; Parcheggi al Vomero</h3>
+              <ul>
+                <li><strong>Tangenziale di Napoli (A56):</strong> prendere l'uscita <strong>Vomero</strong> (Via Cilea / Via Caldieri) e proseguire verso Piazza Vanvitelli / Via Luca Giordano.</li>
+                <li><strong>Parcheggi consigliati:</strong> sono presenti diversi garage custoditi in zona Via Luca Giordano, Via Cimarosa e Via Kerbaker; anche lungo Via Aniello Falcone e dintorni di Palazzo Belvedere sono disponibili garage convenzionati/privati.</li>
+                <li><strong>Nota traffico:</strong> il sabato pomeriggio il Vomero è molto vivace; consigliamo di prevedere 15–20 minuti di margine per il parcheggio.</li>
+              </ul>
+            </div>
+
+            <div class="travel-panel" id="travel-spostamento">
+              <h3>Dalla Chiesa a Palazzo Belvedere</h3>
+              <ul>
+                <li><strong>Distanza:</strong> circa 1,4 km lungo la collina del Vomero (da Via Luca Giordano, 2 a Via Aniello Falcone, 122).</li>
+                <li><strong>In auto o taxi:</strong> circa 8–12 minuti.</li>
+                <li><strong>A piedi:</strong> circa 18 minuti con una piacevole passeggiata panoramica (leggero dislivello lungo Via Aniello Falcone — comoda se non indossate tacchi molto alti).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modulo RSVP -->
+    <section class="section section-tinted" id="rsvp">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Vi Aspettiamo</p>
+          <h2 class="section-title">Conferma la Tua Presenza</h2>
+          <p class="section-lead">
+            Ti chiediamo gentilmente di confermare compilando il modulo qui sotto: potrai inviarci il riepilogo in un clic su WhatsApp o via Email.
+          </p>
+        </div>
+
+        <div class="rsvp-card reveal">
+          <form id="rsvpForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group full">
+                <label for="guestName">Nome e Cognome (o Famiglia) *</label>
+                <input type="text" id="guestName" name="guestName" placeholder="Es. Marco Rossi e Giulia Bianchi" required />
+              </div>
+
+              <div class="form-group full">
+                <span class="field-label">Parteciperai al nostro matrimonio? *</span>
+                <div class="radio-pills">
+                  <label class="pill-option">
+                    <input type="radio" name="attendance" value="Sì, ci sarò" checked />
+                    <span>Con grande gioia, ci sarò</span>
+                  </label>
+                  <label class="pill-option">
+                    <input type="radio" name="attendance" value="No, purtroppo non potrò" />
+                    <span>Purtroppo non potrò partecipare</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Sezione dettagli solo se partecipa -->
+              <div class="attendance-details full" id="attendanceDetails">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label for="adultsCount">Numero Adulti</label>
+                    <select id="adultsCount" name="adultsCount">
+                      <option value="1">1 adulto</option>
+                      <option value="2" selected>2 adulti</option>
+                      <option value="3">3 adulti</option>
+                      <option value="4">4 adulti</option>
+                      <option value="5">5 adulti</option>
+                      <option value="6">6 adulti</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="childrenCount">Numero Bambini</label>
+                    <select id="childrenCount" name="childrenCount">
+                      <option value="0" selected>Nessun bambino</option>
+                      <option value="1">1 bambino</option>
+                      <option value="2">2 bambini</option>
+                      <option value="3">3 bambini</option>
+                      <option value="4">4 bambini</option>
+                    </select>
+                  </div>
+
+                  <!-- Campi dinamici età bambini -->
+                  <div class="form-group full hidden" id="childrenAgesWrap">
+                    <span class="field-label">Età dei bambini (utile per seggioloni e menu dedicati)</span>
+                    <div class="children-ages-grid" id="childrenAgesGrid"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="dietary">Preferenze Alimentari</label>
+                    <select id="dietary" name="dietary">
+                      <option value="Menu classico (nessuna esigenza particolare)">Menu classico</option>
+                      <option value="Vegetariano">Vegetariano</option>
+                      <option value="Vegano">Vegano</option>
+                      <option value="Senza glutine (celiachia)">Senza glutine</option>
+                      <option value="Misto nel gruppo (specifico nelle note)">Misto nel gruppo (specifico sotto)</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="allergies">Allergie o Intolleranze</label>
+                    <input type="text" id="allergies" name="allergies" placeholder="Es. lattosio, frutta a guscio, crostacei..." />
+                  </div>
+
+                  <div class="form-group full">
+                    <span class="field-label">Ospitalità al Chiostro San Francesco (Ven 8 – Dom 10 Ottobre)</span>
+                    <div class="radio-pills">
+                      <label class="pill-option">
+                        <input type="radio" name="hotel" value="No, non occorre l'hotel" checked />
+                        <span>Non mi occorre l'hotel</span>
+                      </label>
+                      <label class="pill-option">
+                        <input type="radio" name="hotel" value="Sì, desidero soggiornare al Chiostro (8–10 Ottobre)" />
+                        <span>Sì, desidero pernottare (8–10 Ott)</span>
+                      </label>
+                      <label class="pill-option">
+                        <input type="radio" name="hotel" value="Sì, solo una notte (specifico nelle note)" />
+                        <span>Sì, solo 1 notte (specifico sotto)</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group full">
+                <label for="notes">Note, dettagli camera o un messaggio per gli sposi</label>
+                <textarea id="notes" name="notes" rows="3" placeholder="Scrivici eventuali richieste particolari, orario d'arrivo o un saluto..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary btn-lg">Prepara e Invia Conferma</button>
+              <p class="form-hint" id="formStatus" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <!-- Riepilogo generato con invio diretto WhatsApp / Email -->
+          <div class="rsvp-result hidden" id="rsvpResult">
+            <div class="result-badge">✓ Riepilogo pronto da inviare</div>
+            <h3>Grazie di cuore!</h3>
+            <p class="result-intro">
+              Scegli come preferisci inviarci la tua conferma: il messaggio è già pronto, ti basterà premere Invia.
+            </p>
+            <pre class="summary-preview" id="summaryPreview"></pre>
+            <div class="result-actions">
+              <a href="#" id="btnSendWhatsApp" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                Invia su WhatsApp
+              </a>
+              <a href="#" id="btnSendEmail" class="btn btn-primary">
+                Invia via Email
+              </a>
+              <button type="button" id="btnCopySummary" class="btn btn-outline">
+                Copia testo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <div class="section-header reveal">
+          <p class="section-kicker">Domande Frequenti</p>
+          <h2 class="section-title">Piccoli Dettagli Utili</h2>
+        </div>
+
+        <div class="faq-list reveal">
+          <details class="faq-item" open>
+            <summary>Qual è il dress code consigliato?</summary>
+            <p>
+              Eleganza formale autunnale. A inizio ottobre a Napoli le giornate sono spesso miti e soleggiate, ma la sera sulla terrazza di Palazzo Belvedere può esserci una piacevole brezza dal mare: consigliamo una stola o una giacca leggera.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>A che ora conviene arrivare in chiesa?</summary>
+            <p>
+              La cerimonia inizia puntualmente alle <strong>15:00</strong> presso la Chiesa di San Francesco d'Assisi al Vomero. Consigliamo di accomodarsi entro le <strong>14:40</strong>.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>I bambini sono i benvenuti?</summary>
+            <p>
+              Assolutamente sì! Vi chiediamo solo di indicare numero ed età nel modulo RSVP così da predisporre al meglio seggioloni e menu dedicati.
+            </p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Come funziona il pernottamento per chi viene da fuori?</summary>
+            <p>
+              L'ospitalità è prevista presso il <strong>Chiostro San Francesco</strong> (Via Luca Giordano, 2) da venerdì 8 a domenica 10 ottobre 2027. Segnalate la vostra adesione nel modulo RSVP e vi ricontatteremo con tutti i dettagli del check-in.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img src="./assets/img/logo-im.png" alt="Monogramma IM" class="footer-logo" />
+      <p class="footer-names">Imerio &amp; Marilena</p>
+      <p class="footer-date">9 Ottobre 2027 · Napoli</p>
+
+      <div class="footer-contacts">
+        <a href="https://wa.me/393498194558" target="_blank" rel="noopener noreferrer">WhatsApp: +39 349 819 4558</a>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:imerio.spagnuolo@gmail.com">imerio.spagnuolo@gmail.com</a>
+      </div>
+
+      <div class="footer-maps">
+        <a href="https://maps.app.goo.gl/PwxZp1wAJ4Mf4NFZ8?g_st=ac" target="_blank" rel="noopener noreferrer">Chiesa San Francesco</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://maps.app.goo.gl/JiQrz46grgzhtTSs9?g_st=ac" target="_blank" rel="noopener noreferrer">Palazzo Belvedere</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://maps.app.goo.gl/LyCa3Jx6GX5fL3zB6?g_st=ac" target="_blank" rel="noopener noreferrer">Chiostro San Francesco</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
