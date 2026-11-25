@@ -240,10 +240,11 @@ a:hover {
 }
 
 .couple-names .amp {
+  display: block;
   font-style: italic;
   color: var(--gold);
   font-weight: 400;
-  margin: 0 0.15em;
+  margin: 0.08em 0;
 }
 
 .wax-divider {
