@@ -1300,3 +1300,81 @@ input[aria-invalid="true"] {
   border-color: var(--wax-dark);
   box-shadow: 0 0 0 3px rgba(142, 79, 59, 0.18);
 }
+
+/* Mappe caricate solo al tocco */
+.map-lazy {
+  height: 100%;
+}
+
+.map-lazy iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.map-load {
+  width: 100%;
+  height: 100%;
+  min-height: 44px;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1.5rem;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top right, rgba(235, 195, 174, 0.35), transparent 60%),
+    linear-gradient(180deg, #FAF7F2, #F3ECE3);
+}
+
+.map-load-icon {
+  font-size: 2rem;
+}
+
+.map-load-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--wax-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.map-load-note {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.map-load:hover .map-load-text {
+  color: var(--wax-darker);
+}
+
+.map-load:focus-visible {
+  outline: 2px solid var(--wax-dark);
+  outline-offset: -4px;
+}
+
+/* Meno movimento per chi lo ha chiesto nelle impostazioni del sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn,
+  .btn:hover,
+  .mobile-cta {
+    transition: none;
+    transform: none;
+  }
+}

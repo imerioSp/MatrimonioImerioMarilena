@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initRsvpForm();
   initMobileCta();
   initRsvpA11y();
+  initLazyMaps();
 });
 
 /* 1. Navigazione & Menu Mobile */
@@ -395,5 +396,23 @@ function initRsvpA11y() {
   form.addEventListener("submit", check);
   name.addEventListener("input", () => {
     if (name.value.trim()) name.removeAttribute("aria-invalid");
+  });
+}
+
+/* 9. Mappe Google caricate solo al tocco (evitano ~5 MB su mobile e i cookie di Google
+      finché l'ospite non le apre). Separato dal modulo RSVP. */
+function initLazyMaps() {
+  document.querySelectorAll(".map-lazy").forEach((wrap) => {
+    const btn = wrap.querySelector(".map-load");
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+      iframe.title = wrap.dataset.mapTitle || "Mappa";
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.src = wrap.dataset.mapSrc;
+      wrap.replaceChildren(iframe);
+      iframe.focus();
+    });
   });
 }
