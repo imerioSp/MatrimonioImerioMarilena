@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocationMedia();
   initTravelTabs();
   initRsvpForm();
+  initMobileCta();
 });
 
 /* 1. Navigazione & Menu Mobile */
@@ -318,4 +319,24 @@ function initRsvpForm() {
       btnCopy.textContent = "Seleziona e copia";
     }
   });
+}
+
+/* 7. Pulsante "Conferma" fisso su mobile: nascosto quando la sezione RSVP
+      (o il pulsante "Conferma" della hero) è visibile. Non tocca l'invio del modulo. */
+function initMobileCta() {
+  const cta = document.getElementById("mobileCta");
+  const rsvp = document.getElementById("rsvp");
+  if (!cta || !rsvp || !("IntersectionObserver" in window)) return;
+
+  const targets = [rsvp, document.querySelector(".hero-actions")].filter(Boolean);
+  const visible = new Set();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visible.add(entry.target);
+      else visible.delete(entry.target);
+    });
+    cta.classList.toggle("is-hidden", visible.size > 0);
+  });
+
+  targets.forEach((el) => observer.observe(el));
 }

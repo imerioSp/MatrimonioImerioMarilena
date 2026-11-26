@@ -42,6 +42,7 @@
         <a href="#location">Location</a>
         <a href="#ospitalita">Ospitalità</a>
         <a href="#come-arrivare">Come Arrivare</a>
+        <a href="#regalo">Regalo</a>
         <a href="#faq">FAQ</a>
         <a href="#rsvp" class="nav-cta">Conferma RSVP</a>
       </nav>
@@ -94,6 +95,11 @@
           <p class="wedding-date">Sabato 9 Ottobre 2027</p>
           <p class="wedding-place">Napoli · Vomero</p>
 
+          <div class="hero-actions">
+            <a href="#rsvp" class="btn btn-primary">Conferma la tua presenza</a>
+            <a href="#location" class="btn btn-outline">Scopri le location</a>
+          </div>
+
           <!-- Countdown live -->
           <div class="countdown" id="countdown" aria-label="Conto alla rovescia al matrimonio">
             <div class="count-box">
@@ -120,11 +126,6 @@
           <p class="hero-story">
             A volte le storie più belle iniziano senza essere programmate. Era luglio 2018, a Milano, e quello che sembrava un semplice compleanno tra amici si è trasformato nell'inizio di qualcosa di speciale.
           </p>
-
-          <div class="hero-actions">
-            <a href="#rsvp" class="btn btn-primary">Conferma la tua presenza</a>
-            <a href="#location" class="btn btn-outline">Scopri le location</a>
-          </div>
         </div>
       </div>
     </section>
@@ -314,8 +315,11 @@
               Per rendere il vostro soggiorno comodo e rilassante, abbiamo riservato l'ospitalità presso il
               <strong>Chiostro San Francesco</strong>, uno storico complesso del Vomero dotato di un incantevole giardino interno.
             </p>
+            <p>
+              Le camere sono <mark class="placeholder">[OFFERTE DA NOI / a tariffa convenzionata di … €]</mark> e limitate: indicatelo nell'RSVP entro il <mark class="placeholder">[DATA]</mark>.
+            </p>
             <ul class="perk-list">
-              <li><strong>Posizione imbattibile:</strong> si trova allo stesso indirizzo della Chiesa (Via Luca Giordano, 2) — il sabato mattina basterà scendere a piedi.</li>
+              <li><strong>Posizione imbattibile:</strong> si trova accanto alla Chiesa: il sabato basterà scendere a piedi per la cerimonia.</li>
               <li><strong>Weekend completo:</strong> soggiorni disponibili dal venerdì alla domenica.</li>
               <li><strong>Come prenotare:</strong> indica la tua preferenza direttamente nel <a href="#rsvp">modulo RSVP</a> in fondo alla pagina.</li>
             </ul>
@@ -428,7 +432,7 @@
           <p class="section-kicker">Vi Aspettiamo</p>
           <h2 class="section-title">Conferma la Tua Presenza</h2>
           <p class="section-lead">
-            Ti chiediamo gentilmente di confermare compilando il modulo qui sotto: potrai copiare il riepilogo della tua conferma.
+            Vi chiediamo di confermare entro il <mark class="placeholder">[DATA]</mark>: bastano due minuti. Alla fine potrete copiare il riepilogo della vostra conferma.
           </p>
         </div>
 
@@ -552,8 +556,24 @@
       </div>
     </section>
 
+    <!-- Regalo -->
+    <section class="section" id="regalo">
+      <div class="container narrow">
+        <div class="section-header reveal">
+          <p class="section-kicker">Lista nozze</p>
+          <h2 class="section-title">Un pensiero per noi</h2>
+        </div>
+
+        <div class="gift-card reveal">
+          <p>
+            La vostra presenza è il regalo più bello. Se desiderate farci un pensiero, <mark class="placeholder">[LISTA NOZZE / IBAN … intestato a …]</mark>.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ -->
-    <section class="section" id="faq">
+    <section class="section section-tinted" id="faq">
       <div class="container narrow">
         <div class="section-header reveal">
           <p class="section-kicker">Domande Frequenti</p>
@@ -588,10 +608,20 @@
               L'ospitalità è prevista presso il <strong>Chiostro San Francesco</strong> (Via Luca Giordano, 2) da venerdì 8 a domenica 10 ottobre 2027. Segnalate la vostra adesione nel modulo RSVP e vi ricontatteremo con tutti i dettagli del check-in.
             </p>
           </details>
+
+          <details class="faq-item" id="faq-contatti">
+            <summary>Avete un dubbio?</summary>
+            <p>
+              Per qualsiasi dubbio scriveteci a <mark class="placeholder">[CONTATTO]</mark>.
+            </p>
+          </details>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Pulsante "Conferma" fisso in basso (solo mobile), nascosto quando l'RSVP è visibile -->
+  <a href="#rsvp" class="mobile-cta" id="mobileCta">Conferma la tua presenza</a>
 
   <!-- Footer -->
   <footer class="site-footer">
@@ -599,6 +629,11 @@
       <img src="./assets/img/logo-im.png" alt="Monogramma IM" class="footer-logo" />
       <p class="footer-names">Imerio &amp; Marilena</p>
       <p class="footer-date">9 Ottobre 2027 · Napoli</p>
+
+      <!-- [CONTATTO]: sostituire href con mailto:… oppure https://wa.me/… quando Imerio fornisce il contatto -->
+      <div class="footer-contacts">
+        <a href="#faq-contatti">Scriveteci: <mark class="placeholder">[CONTATTO]</mark></a>
+      </div>
 
       <div class="footer-maps">
         <a href="https://maps.app.goo.gl/PwxZp1wAJ4Mf4NFZ8?g_st=ac" target="_blank" rel="noopener noreferrer">Chiesa San Francesco</a>
