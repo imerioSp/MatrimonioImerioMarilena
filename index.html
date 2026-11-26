@@ -8,16 +8,22 @@
 
   <!-- Open Graph per anteprima elegante su WhatsApp / Social -->
   <meta property="og:title" content="Imerio &amp; Marilena · 9 Ottobre 2027" />
-  <meta property="og:description" content="Sabato 9 Ottobre 2027 · Chiesa di San Francesco d'Assisi al Vomero &amp; Palazzo Belvedere, Napoli." />
+  <meta property="og:description" content="Sabato 9 ottobre 2027 a Napoli. Programma, luoghi e conferma della presenza." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./assets/img/logo-im.png" />
+  <meta property="og:url" content="https://imeriosp.github.io/MatrimonioImerioMarilena/" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:image" content="https://imeriosp.github.io/MatrimonioImerioMarilena/assets/img/og-cover.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Imerio &amp; Marilena · 9 ottobre 2027 · Napoli" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#FAF7F2" />
 
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png" />
   <!-- Font locali integrati nel progetto -->
   <link rel="stylesheet" href="./css/fonts.css" />
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -26,8 +32,8 @@
   <!-- Navigazione fissa -->
   <header class="site-header" id="siteHeader">
     <div class="container nav-inner">
-      <a href="#top" class="brand" aria-label="Torna in alto - Imerio e Marilena">
-        <img src="./assets/img/logo-im.png" alt="Monogramma IM" class="brand-logo" />
+      <a href="#top" class="brand">
+        <img src="./assets/img/logo-im.png" alt="" class="brand-logo" />
         <span class="brand-text">Imerio &amp; Marilena</span>
       </a>
 
@@ -195,7 +201,7 @@
           <p class="section-kicker">I Luoghi del Cuore</p>
           <h2 class="section-title">Cerimonia &amp; Ricevimento</h2>
           <p class="section-lead">
-            Entrambe le location si trovano sulla collina del Vomero, a soli 100 metri l'una dall'altra (2 minuti a piedi).
+            Entrambe le location si trovano sulla collina del Vomero, a pochi passi l'una dall'altra (circa 3 minuti a piedi).
           </p>
         </div>
 
@@ -204,8 +210,7 @@
           <article class="location-card reveal" data-location="chiesa">
             <div class="location-media">
               <div class="media-tabs" role="tablist" aria-label="Visualizzazione Chiesa">
-                <button type="button" class="media-tab active" data-target="map">Mappa Reale</button>
-                <button type="button" class="media-tab" data-target="photo">Foto Location</button>
+                <button type="button" class="media-tab active" data-target="map">Mappa</button>
               </div>
 
               <div class="media-panel active" data-panel="map">
@@ -217,22 +222,7 @@
                 </iframe>
               </div>
 
-              <div class="media-panel" data-panel="photo">
-                <img
-                  src="./assets/img/chiesa.jpg"
-                  alt="Chiesa di San Francesco d'Assisi al Vomero"
-                  class="location-photo"
-                  data-photo-key="chiesa"
-                />
-                <div class="photo-fallback">
-                  <div class="fallback-icon" aria-hidden="true">⛪</div>
-                  <p class="fallback-title">Chiesa di San Francesco d'Assisi al Vomero</p>
-                  <p class="fallback-sub">Apri la galleria fotografica ufficiale su Google Maps.</p>
-                  <div class="fallback-actions">
-                    <a href="https://maps.app.goo.gl/PwxZp1wAJ4Mf4NFZ8?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Foto su Google Maps</a>
-                  </div>
-                </div>
-              </div>
+              <!-- Scheda "Foto" rimossa finché manca assets/img/chiesa.jpg (404). Per ripristinarla vedi assets/img/README.txt e il commit 8d5346c. -->
             </div>
 
             <div class="location-body">
@@ -254,8 +244,7 @@
           <article class="location-card reveal" data-location="palazzo">
             <div class="location-media">
               <div class="media-tabs" role="tablist" aria-label="Visualizzazione Palazzo Belvedere">
-                <button type="button" class="media-tab active" data-target="map">Mappa Reale</button>
-                <button type="button" class="media-tab" data-target="photo">Foto Location</button>
+                <button type="button" class="media-tab active" data-target="map">Mappa</button>
               </div>
 
               <div class="media-panel active" data-panel="map">
@@ -267,22 +256,7 @@
                 </iframe>
               </div>
 
-              <div class="media-panel" data-panel="photo">
-                <img
-                  src="./assets/img/palazzo-belvedere.jpg"
-                  alt="Palazzo Belvedere Napoli"
-                  class="location-photo"
-                  data-photo-key="palazzo"
-                />
-                <div class="photo-fallback">
-                  <div class="fallback-icon" aria-hidden="true">🏛️</div>
-                  <p class="fallback-title">Palazzo Belvedere · Napoli</p>
-                  <p class="fallback-sub">Scopri gli scatti reali della terrazza panoramica su Google Maps.</p>
-                  <div class="fallback-actions">
-                    <a href="https://maps.app.goo.gl/JiQrz46grgzhtTSs9?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Foto su Google Maps</a>
-                  </div>
-                </div>
-              </div>
+              <!-- Scheda "Foto" rimossa finché manca assets/img/palazzo-belvedere.jpg (404). Per ripristinarla vedi assets/img/README.txt e il commit 8d5346c. -->
             </div>
 
             <div class="location-body">
@@ -333,8 +307,7 @@
 
           <div class="hospitality-media">
             <div class="media-tabs" role="tablist" aria-label="Visualizzazione Chiostro San Francesco">
-              <button type="button" class="media-tab active" data-target="map">Mappa Reale</button>
-              <button type="button" class="media-tab" data-target="photo">Foto Struttura</button>
+              <button type="button" class="media-tab active" data-target="map">Mappa</button>
             </div>
 
             <div class="media-panel active" data-panel="map">
@@ -346,22 +319,7 @@
               </iframe>
             </div>
 
-            <div class="media-panel" data-panel="photo">
-              <img
-                src="./assets/img/chiostro.jpg"
-                alt="Chiostro San Francesco al Vomero"
-                class="location-photo"
-                data-photo-key="chiostro"
-              />
-              <div class="photo-fallback">
-                <div class="fallback-icon" aria-hidden="true">🌿</div>
-                <p class="fallback-title">Chiostro San Francesco · Vomero</p>
-                <p class="fallback-sub">Visualizza le foto reali del chiostro e delle camere su Google Maps.</p>
-                <div class="fallback-actions">
-                  <a href="https://maps.app.goo.gl/LyCa3Jx6GX5fL3zB6?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">Foto su Google Maps</a>
-                </div>
-              </div>
-            </div>
+            <!-- Scheda "Foto" rimossa finché manca assets/img/chiostro.jpg (404). Per ripristinarla vedi assets/img/README.txt e il commit 8d5346c. -->
           </div>
         </div>
       </div>
@@ -379,7 +337,7 @@
         </div>
 
         <div class="travel-box reveal">
-          <div class="travel-tabs" role="tablist">
+          <div class="travel-tabs" role="tablist" aria-label="Come arrivare">
             <button type="button" class="travel-tab active" data-travel="treno">In Treno</button>
             <button type="button" class="travel-tab" data-travel="aereo">In Aereo</button>
             <button type="button" class="travel-tab" data-travel="auto">In Auto &amp; Parcheggi</button>
@@ -415,8 +373,7 @@
             <div class="travel-panel" id="travel-spostamento">
               <h3>Dalla Chiesa a Palazzo Belvedere</h3>
               <ul>
-                <li><strong>Distanza:</strong> appena <strong>100 metri</strong>.</li>
-                <li><strong>A piedi:</strong> <strong>2 minuti a piedi</strong> subito dopo la cerimonia.</li>
+                <li><strong>Distanza:</strong> a pochi passi (circa <strong>3 minuti a piedi</strong>).</li>
                 <li><strong>Auto o taxi non necessari:</strong> ci si sposta comodamente solo a piedi, senza dover muovere l'auto.</li>
               </ul>
             </div>
@@ -441,11 +398,11 @@
             <div class="form-grid">
               <div class="form-group full">
                 <label for="guestName">Nome e Cognome (o Famiglia) *</label>
-                <input type="text" id="guestName" name="guestName" placeholder="Es. Marco Rossi e Giulia Bianchi" required />
+                <input type="text" id="guestName" name="guestName" placeholder="Es. Marco Rossi e Giulia Bianchi" required aria-describedby="formStatus" />
               </div>
 
-              <div class="form-group full">
-                <span class="field-label">Parteciperai al nostro matrimonio? *</span>
+              <fieldset class="form-group full">
+                <legend class="field-label">Parteciperai al nostro matrimonio? *</legend>
                 <div class="radio-pills">
                   <label class="pill-option">
                     <input type="radio" name="attendance" value="Sì, ci sarò" checked />
@@ -456,7 +413,7 @@
                     <span>Purtroppo non potrò partecipare</span>
                   </label>
                 </div>
-              </div>
+              </fieldset>
 
               <!-- Sezione dettagli solo se partecipa -->
               <div class="attendance-details full" id="attendanceDetails">
@@ -506,8 +463,8 @@
                     <input type="text" id="allergies" name="allergies" placeholder="Es. lattosio, frutta a guscio, crostacei..." />
                   </div>
 
-                  <div class="form-group full">
-                    <span class="field-label">Ospitalità al Chiostro San Francesco (Ven 8 – Dom 10 Ottobre)</span>
+                  <fieldset class="form-group full">
+                    <legend class="field-label">Ospitalità al Chiostro San Francesco (Ven 8 – Dom 10 Ottobre)</legend>
                     <div class="radio-pills">
                       <label class="pill-option">
                         <input type="radio" name="hotel" value="No, non occorre l'hotel" checked />
@@ -522,7 +479,7 @@
                         <span>Sì, solo 1 notte (specifico sotto)</span>
                       </label>
                     </div>
-                  </div>
+                  </fieldset>
                 </div>
               </div>
 
@@ -618,10 +575,10 @@
         </div>
       </div>
     </section>
-  </main>
 
-  <!-- Pulsante "Conferma" fisso in basso (solo mobile), nascosto quando l'RSVP è visibile -->
-  <a href="#rsvp" class="mobile-cta" id="mobileCta">Conferma la tua presenza</a>
+    <!-- Pulsante "Conferma" fisso in basso (solo mobile), nascosto quando l'RSVP è visibile -->
+    <a href="#rsvp" class="mobile-cta" id="mobileCta">Conferma la tua presenza</a>
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">

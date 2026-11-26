@@ -1,17 +1,24 @@
-COME AGGIUNGERE LE VOSTRE FOTO REALI DELLE LOCATION
-===================================================
+FOTO DELLE LOCATION
+===================
 
-Il sito mostra già di default la mappa interattiva reale di Google Maps per ogni location
-e il collegamento diretto alle gallerie fotografiche ufficiali.
+STATO ATTUALE: la scheda "Foto" delle tre location (Chiesa, Palazzo Belvedere,
+Chiostro) è stata tolta perché i file chiesa.jpg, palazzo-belvedere.jpg e
+chiostro.jpg non esistono (davano errore 404). Il sito mostra solo la "Mappa"
+e il pulsante "Apri in Google Maps".
 
-Se volete mostrare anche foto reali scattate da voi (o scaricate dalle strutture) nel tab "Foto Location":
-1. Salvate qui dentro (nella cartella assets/img/) le vostre foto con questi nomi esatti:
-   - chiesa.jpg             (Chiesa di San Francesco d'Assisi al Vomero)
-   - palazzo-belvedere.jpg  (Palazzo Belvedere)
-   - chiostro.jpg           (Chiostro San Francesco)
+PER RIPRISTINARLA quando arrivano le foto:
+1. Preparate le foto in formato WebP (o JPG), larghe circa 1200 px, sotto i 200 KB,
+   con questi nomi:
+   - chiesa.webp             (Chiesa di San Francesco d'Assisi al Vomero)
+   - palazzo-belvedere.webp  (Palazzo Belvedere)
+   - chiostro.webp           (Chiostro San Francesco)
+2. In index.html, al posto del commento <!-- Scheda "Foto" rimossa ... -->,
+   reinserite il pulsante della scheda e il pannello "photo" presenti nel
+   commit 8d5346c, aggiornando src, width e height dell'immagine
+   (es. width="1200" height="800").
+   Il JavaScript delle schede (role="tab", aria-selected, frecce) li gestisce già.
 
-2. Caricate i file su GitHub nella cartella assets/img/.
-   Il sito le rileverà e le mostrerà automaticamente!
-
-Suggerimento: usate foto in formato orizzontale (es. 1200x800 px) e leggere (sotto 500 KB)
-per un caricamento istantaneo anche da smartphone.
+ALTRE IMMAGINI
+- og-cover.jpg (1200x630): anteprima per WhatsApp e social.
+- apple-touch-icon.png (180x180): icona per "Aggiungi a Home" su iPhone.
+- favicon.png, logo-im.png: monogramma.

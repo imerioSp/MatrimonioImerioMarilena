@@ -14,7 +14,8 @@
   --peach: #EBC3AE;
   --peach-soft: #F7E5DA;
   --wax: #C7826B;
-  --wax-dark: #A45F49;
+  --wax-dark: #8E4F3B;
+  --wax-darker: #74402F;
   --gold: #B88B3F;
   --gold-light: #D7B46A;
   --ink: #342B26;
@@ -104,6 +105,7 @@ a:hover {
 .brand {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   gap: 0.65rem;
   color: var(--ink);
 }
@@ -128,9 +130,12 @@ a:hover {
 }
 
 .site-nav a {
-  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -142,18 +147,22 @@ a:hover {
 .site-nav a.nav-cta {
   padding: 0.55rem 1.1rem;
   border-radius: 999px;
-  background: var(--wax);
+  background: var(--wax-dark);
   color: #fff;
 }
 
 .site-nav a.nav-cta:hover {
-  background: var(--wax-dark);
+  background: var(--wax-darker);
   color: #fff;
 }
 
 .nav-toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   gap: 5px;
   background: none;
   border: none;
@@ -223,8 +232,8 @@ a:hover {
 }
 
 .eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-muted);
   margin: 0 0 0.75rem;
@@ -278,8 +287,8 @@ a:hover {
 }
 
 .wedding-place {
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--wax-dark);
   margin: 0.35rem 0 2rem;
@@ -314,8 +323,8 @@ a:hover {
 }
 
 .count-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -342,10 +351,11 @@ a:hover {
   padding: 0.85rem 1.65rem;
   border-radius: 999px;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.11em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  min-height: 44px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
@@ -356,13 +366,13 @@ a:hover {
 }
 
 .btn-primary {
-  background: var(--wax);
+  background: var(--wax-dark);
   color: #fff;
   box-shadow: 0 8px 20px rgba(199, 130, 107, 0.26);
 }
 
 .btn-primary:hover {
-  background: var(--wax-dark);
+  background: var(--wax-darker);
   color: #fff;
 }
 
@@ -390,7 +400,7 @@ a:hover {
 
 .btn-sm {
   padding: 0.6rem 1.15rem;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
 }
 
 .btn-lg {
@@ -424,8 +434,8 @@ a:hover {
 }
 
 .section-kicker {
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--wax-dark);
   margin: 0 0 0.5rem;
@@ -477,10 +487,9 @@ a:hover {
 
 .timeline-time {
   text-align: right;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--wax-dark);
   padding-top: 0.35rem;
 }
@@ -555,10 +564,11 @@ a:hover {
   border: none;
   background: transparent;
   padding: 0.72rem 0.75rem;
+  min-height: 44px;
   font-family: var(--font-sans);
-  font-size: 0.74rem;
-  font-weight: 500;
-  letter-spacing: 0.09em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-muted);
   cursor: pointer;
@@ -652,8 +662,8 @@ a:hover {
 .location-badge {
   display: inline-block;
   align-self: flex-start;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--wax-dark);
@@ -673,7 +683,7 @@ a:hover {
 .location-address {
   font-size: 0.86rem;
   font-weight: 500;
-  color: var(--gold);
+  color: var(--ink-muted);
   margin: 0 0 0.75rem;
 }
 
@@ -760,12 +770,13 @@ a:hover {
 .travel-tab {
   flex: 1 1 160px;
   padding: 1rem;
+  min-height: 44px;
   border: none;
   background: transparent;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-muted);
   cursor: pointer;
@@ -837,9 +848,9 @@ a:hover {
 }
 
 label, .field-label {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -888,7 +899,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 .pill-option span {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 0.65rem 1.05rem;
   border-radius: 999px;
   border: 1px solid rgba(184, 139, 63, 0.32);
@@ -936,7 +949,7 @@ input:focus, select:focus, textarea:focus {
   border-radius: 999px;
   background: #E8F5EC;
   color: #1F6F3D;
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 0.6rem;
 }
@@ -990,6 +1003,7 @@ input:focus, select:focus, textarea:focus {
 
 .faq-item summary {
   cursor: pointer;
+  min-height: 44px;
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 600;
@@ -1042,8 +1056,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 .footer-date {
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--wax-dark);
   margin: 0.25rem 0 1.4rem;
@@ -1061,7 +1075,19 @@ input:focus, select:focus, textarea:focus {
 
 .footer-maps {
   margin-top: 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.footer-contacts a,
+.footer-maps a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.25rem;
+}
+
+.footer-maps span {
+  align-self: center;
 }
 
 /* Scroll Reveal */
@@ -1232,4 +1258,45 @@ input:focus, select:focus, textarea:focus {
     transform: translateY(150%);
     pointer-events: none;
   }
+}
+
+/* Link dentro il testo: sottolineati, non solo colorati */
+.perk-list a,
+.faq-item p a,
+.section-lead a,
+.gift-card a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Focus visibile da tastiera */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="tabpanel"]:focus-visible {
+  outline: 2px solid var(--wax-dark);
+  outline-offset: 2px;
+}
+
+.pill-option input:focus-visible + span {
+  outline: 2px solid var(--wax-dark);
+  outline-offset: 2px;
+}
+
+/* Gruppi di scelta del modulo: fieldset senza stile del browser */
+fieldset.form-group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+fieldset.form-group legend {
+  padding: 0;
+  margin-bottom: 0.45rem;
+}
+
+input[aria-invalid="true"] {
+  border-color: var(--wax-dark);
+  box-shadow: 0 0 0 3px rgba(142, 79, 59, 0.18);
 }
