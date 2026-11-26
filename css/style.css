@@ -227,6 +227,7 @@ a:hover {
 
 .hero-logo {
   width: min(175px, 44vw);
+  height: auto;
   margin: 0 auto;
   filter: drop-shadow(0 6px 12px rgba(184, 139, 63, 0.18));
 }
@@ -1046,6 +1047,7 @@ input:focus, select:focus, textarea:focus {
 
 .footer-logo {
   width: 82px;
+  height: auto;
   margin: 0 auto 0.75rem;
 }
 
