@@ -18,6 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initLocationMedia();
   initTravelTabs();
   initRsvpForm();
+  initMobileCta();
+  initRsvpA11y();
+  initLazyMaps();
 });
 
 /* 1. Navigazione & Menu Mobile */
@@ -101,19 +104,17 @@ function initScrollReveal() {
   items.forEach((el) => observer.observe(el));
 }
 
-/* 4. Schede Location: toggle Mappa Reale / Foto Location + supporto foto reali */
+/* 4. Schede Location: Mappa (scheda Foto disattivata finché mancano le foto) + supporto foto reali */
 function initLocationMedia() {
   document.querySelectorAll("[data-location]").forEach((card) => {
-    const tabs = card.querySelectorAll(".media-tab");
-    const panels = card.querySelectorAll(".media-panel");
-
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const target = tab.dataset.target;
-        tabs.forEach((t) => t.classList.toggle("active", t === tab));
-        panels.forEach((p) => p.classList.toggle("active", p.dataset.panel === target));
-      });
-    });
+    const tabs = Array.from(card.querySelectorAll(".media-tab"));
+    const key = card.dataset.location;
+    setupTabs(
+      tabs,
+      (tab) => card.querySelector(`.media-panel[data-panel="${tab.dataset.target}"]`),
+      "media-" + key,
+      false
+    );
   });
 
   // Gestione caricamento immagini reali in assets/img/ oppure da localStorage (anteprima locale)
@@ -168,16 +169,56 @@ function initLocationMedia() {
 
 /* 5. Tab "Come Arrivare" */
 function initTravelTabs() {
-  const tabs = document.querySelectorAll(".travel-tab");
-  const panels = document.querySelectorAll(".travel-panel");
+  const tabs = Array.from(document.querySelectorAll(".travel-tab"));
+  setupTabs(tabs, (tab) => document.getElementById("travel-" + tab.dataset.travel), "travel", true);
+}
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const key = tab.dataset.travel;
-      tabs.forEach((t) => t.classList.toggle("active", t === tab));
-      panels.forEach((p) => p.classList.toggle("active", p.id === "travel-" + key));
+/* Schede accessibili: role="tab", aria-selected, aria-controls, role="tabpanel",
+   tabindex "roving" e frecce sinistra/destra, Home/Fine */
+function setupTabs(tabs, panelFor, idPrefix, focusablePanels) {
+  if (!tabs.length) return;
+
+  tabs.forEach((tab, i) => {
+    tab.id = tab.id || `${idPrefix}-tab-${i}`;
+    tab.setAttribute("role", "tab");
+    const panel = panelFor(tab);
+    if (panel) {
+      panel.id = panel.id || `${idPrefix}-panel-${i}`;
+      panel.setAttribute("role", "tabpanel");
+      panel.setAttribute("aria-labelledby", tab.id);
+      if (focusablePanels) panel.tabIndex = 0;
+      tab.setAttribute("aria-controls", panel.id);
+    }
+  });
+
+  const select = (tab, moveFocus) => {
+    tabs.forEach((t) => {
+      const on = t === tab;
+      t.classList.toggle("active", on);
+      t.setAttribute("aria-selected", String(on));
+      t.tabIndex = on ? 0 : -1;
+      const p = panelFor(t);
+      if (p) p.classList.toggle("active", on);
+    });
+    if (moveFocus) tab.focus();
+  };
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener("click", () => select(tab, false));
+    tab.addEventListener("keydown", (e) => {
+      let next = null;
+      if (e.key === "ArrowRight") next = tabs[(i + 1) % tabs.length];
+      else if (e.key === "ArrowLeft") next = tabs[(i - 1 + tabs.length) % tabs.length];
+      else if (e.key === "Home") next = tabs[0];
+      else if (e.key === "End") next = tabs[tabs.length - 1];
+      if (next) {
+        e.preventDefault();
+        select(next, true);
+      }
     });
   });
+
+  select(tabs.find((t) => t.classList.contains("active")) || tabs[0], false);
 }
 
 /* 6. Modulo RSVP Interattivo */
@@ -216,6 +257,7 @@ function initRsvpForm() {
       input.type = "text";
       input.name = "childAge_" + i;
       input.placeholder = `Età bambino ${i} (es. 4 anni)`;
+      input.setAttribute("aria-label", `Età del bambino ${i}`);
       childrenAgesGrid.appendChild(input);
     }
   });
@@ -226,7 +268,7 @@ function initRsvpForm() {
 
     const guestName = document.getElementById("guestName").value.trim();
     if (!guestName) {
-      statusEl.textContent = "Per favore inserisci il tuo Nome e Cognome.";
+      statusEl.textContent = "Per favore inserite nome e cognome.";
       document.getElementById("guestName").focus();
       return;
     }
@@ -236,7 +278,7 @@ function initRsvpForm() {
     const adults = document.getElementById("adultsCount").value;
     const children = parseInt(childrenCount.value, 10) || 0;
     const ages = Array.from(childrenAgesGrid.querySelectorAll("input"))
-      .map((el, idx) => (el.value.trim() ? `Bimbo ${idx + 1}: ${el.value.trim()}` : null))
+      .map((el, idx) => (el.value.trim() ? `Bambino ${idx + 1}: ${el.value.trim()}` : null))
       .filter(Boolean);
     const dietary = document.getElementById("dietary").value;
     const allergies = document.getElementById("allergies").value.trim() || "Nessuna";
@@ -244,7 +286,7 @@ function initRsvpForm() {
     const notes = document.getElementById("notes").value.trim();
 
     const lines = [
-      "RSVP Matrimonio Imerio & Marilena (9 Ottobre 2027)",
+      "RSVP Matrimonio Imerio & Marilena (9 ottobre 2027)",
       "--------------------------------------------------",
       `Ospite/i: ${guestName}`,
       `Presenza: ${attendance}`
@@ -317,5 +359,60 @@ function initRsvpForm() {
     } catch {
       btnCopy.textContent = "Seleziona e copia";
     }
+  });
+}
+
+/* 7. Pulsante "Conferma" fisso su mobile: nascosto quando la sezione RSVP
+      (o il pulsante "Conferma" della hero) è visibile. Non tocca l'invio del modulo. */
+function initMobileCta() {
+  const cta = document.getElementById("mobileCta");
+  const rsvp = document.getElementById("rsvp");
+  if (!cta || !rsvp || !("IntersectionObserver" in window)) return;
+
+  const targets = [rsvp, document.querySelector(".hero-actions")].filter(Boolean);
+  const visible = new Set();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visible.add(entry.target);
+      else visible.delete(entry.target);
+    });
+    cta.classList.toggle("is-hidden", visible.size > 0);
+  });
+
+  targets.forEach((el) => observer.observe(el));
+}
+
+/* 8. Accessibilità del modulo RSVP: aria-invalid sul nome mancante.
+      Listener separato e passivo: non blocca, non modifica e non invia nulla. */
+function initRsvpA11y() {
+  const form = document.getElementById("rsvpForm");
+  const name = document.getElementById("guestName");
+  if (!form || !name) return;
+
+  const check = () => {
+    if (name.value.trim()) name.removeAttribute("aria-invalid");
+    else name.setAttribute("aria-invalid", "true");
+  };
+  form.addEventListener("submit", check);
+  name.addEventListener("input", () => {
+    if (name.value.trim()) name.removeAttribute("aria-invalid");
+  });
+}
+
+/* 9. Mappe Google caricate solo al tocco (evitano ~5 MB su mobile e i cookie di Google
+      finché l'ospite non le apre). Separato dal modulo RSVP. */
+function initLazyMaps() {
+  document.querySelectorAll(".map-lazy").forEach((wrap) => {
+    const btn = wrap.querySelector(".map-load");
+    if (!btn) return;
+    btn.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+      iframe.title = wrap.dataset.mapTitle || "Mappa";
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      iframe.setAttribute("allowfullscreen", "");
+      iframe.src = wrap.dataset.mapSrc;
+      wrap.replaceChildren(iframe);
+      iframe.focus();
+    });
   });
 }

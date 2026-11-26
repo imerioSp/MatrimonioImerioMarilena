@@ -14,7 +14,8 @@
   --peach: #EBC3AE;
   --peach-soft: #F7E5DA;
   --wax: #C7826B;
-  --wax-dark: #A45F49;
+  --wax-dark: #8E4F3B;
+  --wax-darker: #74402F;
   --gold: #B88B3F;
   --gold-light: #D7B46A;
   --ink: #342B26;
@@ -104,6 +105,7 @@ a:hover {
 .brand {
   display: inline-flex;
   align-items: center;
+  min-height: 44px;
   gap: 0.65rem;
   color: var(--ink);
 }
@@ -128,9 +130,12 @@ a:hover {
 }
 
 .site-nav a {
-  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-size: 0.85rem;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -142,18 +147,22 @@ a:hover {
 .site-nav a.nav-cta {
   padding: 0.55rem 1.1rem;
   border-radius: 999px;
-  background: var(--wax);
+  background: var(--wax-dark);
   color: #fff;
 }
 
 .site-nav a.nav-cta:hover {
-  background: var(--wax-dark);
+  background: var(--wax-darker);
   color: #fff;
 }
 
 .nav-toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   gap: 5px;
   background: none;
   border: none;
@@ -218,13 +227,14 @@ a:hover {
 
 .hero-logo {
   width: min(175px, 44vw);
+  height: auto;
   margin: 0 auto;
   filter: drop-shadow(0 6px 12px rgba(184, 139, 63, 0.18));
 }
 
 .eyebrow {
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-muted);
   margin: 0 0 0.75rem;
@@ -278,8 +288,8 @@ a:hover {
 }
 
 .wedding-place {
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--wax-dark);
   margin: 0.35rem 0 2rem;
@@ -314,8 +324,8 @@ a:hover {
 }
 
 .count-label {
-  font-size: 0.65rem;
-  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -330,6 +340,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.85rem;
+  margin-bottom: 2.1rem;
 }
 
 /* Buttons */
@@ -341,10 +352,11 @@ a:hover {
   padding: 0.85rem 1.65rem;
   border-radius: 999px;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.11em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  min-height: 44px;
   border: 1px solid transparent;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
@@ -355,13 +367,13 @@ a:hover {
 }
 
 .btn-primary {
-  background: var(--wax);
+  background: var(--wax-dark);
   color: #fff;
   box-shadow: 0 8px 20px rgba(199, 130, 107, 0.26);
 }
 
 .btn-primary:hover {
-  background: var(--wax-dark);
+  background: var(--wax-darker);
   color: #fff;
 }
 
@@ -389,7 +401,7 @@ a:hover {
 
 .btn-sm {
   padding: 0.6rem 1.15rem;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
 }
 
 .btn-lg {
@@ -423,8 +435,8 @@ a:hover {
 }
 
 .section-kicker {
-  font-size: 0.75rem;
-  letter-spacing: 0.22em;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--wax-dark);
   margin: 0 0 0.5rem;
@@ -461,14 +473,14 @@ a:hover {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 165px;
+  left: 215px;
   width: 2px;
   background: linear-gradient(180deg, transparent, var(--peach), var(--peach), transparent);
 }
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 150px 30px 1fr;
+  grid-template-columns: 200px 30px 1fr;
   align-items: start;
   gap: 0.75rem;
   margin-bottom: 1.8rem;
@@ -476,10 +488,9 @@ a:hover {
 
 .timeline-time {
   text-align: right;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--wax-dark);
   padding-top: 0.35rem;
 }
@@ -554,10 +565,11 @@ a:hover {
   border: none;
   background: transparent;
   padding: 0.72rem 0.75rem;
+  min-height: 44px;
   font-family: var(--font-sans);
-  font-size: 0.74rem;
-  font-weight: 500;
-  letter-spacing: 0.09em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--ink-muted);
   cursor: pointer;
@@ -651,8 +663,8 @@ a:hover {
 .location-badge {
   display: inline-block;
   align-self: flex-start;
-  font-size: 0.7rem;
-  letter-spacing: 0.14em;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   font-weight: 600;
   color: var(--wax-dark);
@@ -672,7 +684,7 @@ a:hover {
 .location-address {
   font-size: 0.86rem;
   font-weight: 500;
-  color: var(--gold);
+  color: var(--ink-muted);
   margin: 0 0 0.75rem;
 }
 
@@ -759,12 +771,13 @@ a:hover {
 .travel-tab {
   flex: 1 1 160px;
   padding: 1rem;
+  min-height: 44px;
   border: none;
   background: transparent;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--ink-muted);
   cursor: pointer;
@@ -836,9 +849,9 @@ a:hover {
 }
 
 label, .field-label {
-  font-size: 0.78rem;
+  font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
@@ -853,7 +866,8 @@ textarea {
   border-radius: 10px;
   background: var(--paper);
   font-family: var(--font-sans);
-  font-size: 0.93rem;
+  /* 1rem evita lo zoom automatico di iOS Safari sui campi del modulo */
+  font-size: 1rem;
   color: var(--ink);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
@@ -886,7 +900,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 .pill-option span {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 0.65rem 1.05rem;
   border-radius: 999px;
   border: 1px solid rgba(184, 139, 63, 0.32);
@@ -934,7 +950,7 @@ input:focus, select:focus, textarea:focus {
   border-radius: 999px;
   background: #E8F5EC;
   color: #1F6F3D;
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 0.6rem;
 }
@@ -988,6 +1004,7 @@ input:focus, select:focus, textarea:focus {
 
 .faq-item summary {
   cursor: pointer;
+  min-height: 44px;
   font-family: var(--font-display);
   font-size: 1.35rem;
   font-weight: 600;
@@ -1030,6 +1047,7 @@ input:focus, select:focus, textarea:focus {
 
 .footer-logo {
   width: 82px;
+  height: auto;
   margin: 0 auto 0.75rem;
 }
 
@@ -1040,8 +1058,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 .footer-date {
-  font-size: 0.8rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--wax-dark);
   margin: 0.25rem 0 1.4rem;
@@ -1059,7 +1077,19 @@ input:focus, select:focus, textarea:focus {
 
 .footer-maps {
   margin-top: 0.75rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.footer-contacts a,
+.footer-maps a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.25rem;
+}
+
+.footer-maps span {
+  align-self: center;
 }
 
 /* Scroll Reveal */
@@ -1159,5 +1189,194 @@ input:focus, select:focus, textarea:focus {
   line-height: 1.55;
   color: var(--ink-muted);
   max-width: 580px;
-  margin: 0 auto 2rem;
+  margin: 0 auto;
+}
+
+/* Segnaposti da compilare (ben visibili finché Imerio non fornisce i dati) */
+.placeholder {
+  background: #FFF1A8;
+  color: #4A3500;
+  border: 1px dashed #B58A00;
+  border-radius: 4px;
+  padding: 0 0.3em;
+  font-weight: 600;
+}
+
+/* Regalo */
+.gift-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.25rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.gift-card p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 1.05rem;
+}
+
+/* Pulsante "Conferma" fisso (solo mobile) */
+.mobile-cta {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  body {
+    padding-bottom: 5.5rem;
+  }
+
+  .mobile-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+    z-index: 90;
+    min-height: 48px;
+    padding: 0.8rem 1.2rem;
+    border-radius: 999px;
+    background: var(--wax-dark);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    box-shadow: 0 10px 26px rgba(74, 52, 38, 0.25);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  }
+
+  .mobile-cta:hover,
+  .mobile-cta:focus-visible {
+    color: #fff;
+  }
+
+  .mobile-cta.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(150%);
+    pointer-events: none;
+  }
+}
+
+/* Link dentro il testo: sottolineati, non solo colorati */
+.perk-list a,
+.faq-item p a,
+.section-lead a,
+.gift-card a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Focus visibile da tastiera */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="tabpanel"]:focus-visible {
+  outline: 2px solid var(--wax-dark);
+  outline-offset: 2px;
+}
+
+.pill-option input:focus-visible + span {
+  outline: 2px solid var(--wax-dark);
+  outline-offset: 2px;
+}
+
+/* Gruppi di scelta del modulo: fieldset senza stile del browser */
+fieldset.form-group {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+fieldset.form-group legend {
+  padding: 0;
+  margin-bottom: 0.45rem;
+}
+
+input[aria-invalid="true"] {
+  border-color: var(--wax-dark);
+  box-shadow: 0 0 0 3px rgba(142, 79, 59, 0.18);
+}
+
+/* Mappe caricate solo al tocco */
+.map-lazy {
+  height: 100%;
+}
+
+.map-lazy iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.map-load {
+  width: 100%;
+  height: 100%;
+  min-height: 44px;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 1.5rem;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top right, rgba(235, 195, 174, 0.35), transparent 60%),
+    linear-gradient(180deg, #FAF7F2, #F3ECE3);
+}
+
+.map-load-icon {
+  font-size: 2rem;
+}
+
+.map-load-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--wax-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.map-load-note {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.map-load:hover .map-load-text {
+  color: var(--wax-darker);
+}
+
+.map-load:focus-visible {
+  outline: 2px solid var(--wax-dark);
+  outline-offset: -4px;
+}
+
+/* Meno movimento per chi lo ha chiesto nelle impostazioni del sistema */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn,
+  .btn:hover,
+  .mobile-cta {
+    transition: none;
+    transform: none;
+  }
 }
