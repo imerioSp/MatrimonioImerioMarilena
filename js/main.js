@@ -268,7 +268,7 @@ function initRsvpForm() {
 
     const guestName = document.getElementById("guestName").value.trim();
     if (!guestName) {
-      statusEl.textContent = "Per favore inserisci il tuo Nome e Cognome.";
+      statusEl.textContent = "Per favore inserite nome e cognome.";
       document.getElementById("guestName").focus();
       return;
     }
@@ -278,7 +278,7 @@ function initRsvpForm() {
     const adults = document.getElementById("adultsCount").value;
     const children = parseInt(childrenCount.value, 10) || 0;
     const ages = Array.from(childrenAgesGrid.querySelectorAll("input"))
-      .map((el, idx) => (el.value.trim() ? `Bimbo ${idx + 1}: ${el.value.trim()}` : null))
+      .map((el, idx) => (el.value.trim() ? `Bambino ${idx + 1}: ${el.value.trim()}` : null))
       .filter(Boolean);
     const dietary = document.getElementById("dietary").value;
     const allergies = document.getElementById("allergies").value.trim() || "Nessuna";
@@ -286,7 +286,7 @@ function initRsvpForm() {
     const notes = document.getElementById("notes").value.trim();
 
     const lines = [
-      "RSVP Matrimonio Imerio & Marilena (9 Ottobre 2027)",
+      "RSVP Matrimonio Imerio & Marilena (9 ottobre 2027)",
       "--------------------------------------------------",
       `Ospite/i: ${guestName}`,
       `Presenza: ${attendance}`
